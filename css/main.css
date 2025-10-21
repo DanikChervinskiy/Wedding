@@ -1,0 +1,1113 @@
+@charset "UTF-8";
+/* ================================================================================================================ */
+/* СТИЛИ ОБНУЛЕНИЯ ================================================================================================ */
+/* ================================================================================================================ */
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /*    overflow: auto;*/
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* ================================================================================================================ */
+/* ПОДКЛЮЧЕНИЕ ШРИФТОВ ============================================================================================ */
+/* ================================================================================================================ */
+@font-face {
+  font-family: "Montseratt";
+  src: url("../fonts/Montseratt-Regular.woff2") format("woff2"), url("../fonts/Montseratt-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montseratt";
+  src: url("../fonts/Montseratt-Medium.woff2") format("woff2"), url("../fonts/Montseratt-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montseratt";
+  src: url("../fonts/Montseratt-Bold.woff2") format("woff2"), url("../fonts/Montseratt-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplaySC";
+  src: url("../fonts/PlayfairDisplaySC-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplaySC-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplaySC";
+  src: url("../fonts/PlayfairDisplaySC-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplaySC-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PlayfairDisplaySC";
+  src: url("../fonts/PlayfairDisplaySC-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplaySC-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* ================================================================================================================ */
+/* СТИЛИ UI ======================================================================================================= */
+/* ================================================================================================================ */
+/* Общие стили и классы*/
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+body {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #262626;
+  line-height: 130%;
+}
+
+.img-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.wrapper .main {
+  flex: 1 1 auto;
+  max-width: 570px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Кнопки/Ссылки */
+.btn {
+  margin: 24px 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  box-shadow: none;
+  box-sizing: none;
+  display: block;
+  transition: 0.3s;
+}
+.btn_start {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  line-height: 140%;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  background: #9f847a;
+  border-radius: 0px;
+  text-align: center;
+}
+.btn.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  background: grey;
+}
+.btn:active {
+  opacity: 0.8;
+}
+@media (hover: hover) {
+  .btn:hover {
+    background: #09af69;
+  }
+}
+
+/* Загрузка */
+.sending-main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.3);
+}
+.sending-main img {
+  width: 150px;
+}
+.sending-main.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Елементы формы */
+/* -input */
+.input-custom label {
+  display: block;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000;
+  line-height: 140%;
+  margin: 0 0 7px 0;
+}
+.input-custom input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-align: center;
+  padding: 12px 16px;
+  width: 100%;
+  display: block;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 32px;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #262626;
+  line-height: 140%;
+}
+.input-custom input:focus {
+  border: 1px solid #cfcfcf;
+}
+.input-custom__error {
+  display: none;
+  margin: 5px 0 0 0;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #e52d2e;
+  line-height: 140%;
+}
+.input-custom .error input {
+  border: 1px solid #e52d2e;
+}
+.input-custom .error textarea {
+  border: 1px solid #e52d2e;
+}
+.input-custom .error .input-custom__error {
+  display: block;
+}
+.input-custom textarea {
+  padding: 12px 16px;
+  width: 100%;
+  display: block;
+  background: #fafafa;
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+  line-height: 140%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  height: 100px;
+}
+.input-custom textarea:focus {
+  border: 1px solid #cfcfcf;
+}
+
+/* -checkbox */
+.input-radio {
+  width: 100%;
+}
+.input-radio input {
+  display: none;
+}
+.input-radio label {
+  border: 1px solid #babab9;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #262626;
+  line-height: normal;
+  background: none;
+  padding: 14px 16px;
+  border-radius: 48px;
+  transition: 0.3s;
+  background: #fff;
+}
+.input-radio input:checked + label {
+  background: #704f41;
+  color: #fff;
+}
+.input-radio_green input:checked + label {
+  background: #47aa65;
+  color: #fff;
+}
+.input-radio_red input:checked + label {
+  background: #aa4749;
+  color: #fff;
+}
+
+/* ================================================================================================================ */
+/* СТИЛИ ПОПАП ОКОН =============================================================================================== */
+/* ================================================================================================================ */
+.popup-link {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  background: rgba(0, 0, 0, 0.3);
+  max-height: 100%;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  z-index: -5;
+}
+.popup.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 40;
+}
+.popup__wraper {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  padding: 30px 15px;
+  max-width: 650px;
+}
+.popup__body {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transform: scale(0);
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+.popup.active .popup__body {
+  transform: scale(1);
+}
+/* ================================================================================================================ */
+/* СТИЛИ ТЕКСТОВОЙ СТРАНИЦЫ  ====================================================================================== */
+/* ================================================================================================================ */
+/* ================================================================================================================ */
+/* ГЛАВНАЯ СТРАНИЦА =============================================================================================== */
+/* ================================================================================================================ */
+/* Стили для -------- */
+.hero {
+  position: relative;
+}
+.hero__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero__img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+}
+.hero__body {
+  min-height: 800px;
+  position: relative;
+}
+.hero__text {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  top: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hero__date {
+  text-align: center;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  line-height: normal;
+  margin: 0;
+}
+.hero__title {
+  margin: 0;
+  text-align: center;
+  max-width: 350px;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #fff;
+  line-height: normal;
+  line-height: 12px;
+}
+.hero__name {
+  padding-top: 12px;
+  text-align: center;
+  max-width: 350px;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: #fff;
+  line-height: normal;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.child {
+  padding: 92px 0 64px 0;
+  overflow: hidden;
+}
+.child__body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-width: 500px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+.child__img {
+  position: relative;
+  border: 12px solid #fff;
+  width: 220px;
+  padding-bottom: 55%;
+  box-shadow: 0 5px 20px 0 rgba(38, 38, 38, 0.15);
+}
+.child__men {
+  rotate: 15deg;
+}
+.child__men .child-name {
+  left: 0;
+  top: 0;
+  translate: 0% -200%;
+}
+.child__men .child-name:before {
+  font-size: 50px;
+  left: 50%;
+  top: 90%;
+  transform: rotate(-10deg) translate(0%, 0%);
+}
+.child__heart {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 3;
+  translate: -60% 0%;
+}
+.child__heart:before {
+  font-size: 100px;
+  color: #ff3a3a;
+}
+.child__woman {
+  margin-top: 54px;
+  rotate: -5deg;
+}
+.child__woman .child-name {
+  left: 0;
+  bottom: 0;
+  translate: 0% 200%;
+  text-align: center;
+  width: 100%;
+}
+.child__woman .child-name:before {
+  font-size: 70px;
+  left: 0%;
+  top: 60%;
+  transform: rotate(0deg) translate(-20%, -100%);
+}
+.child__two1 {
+  rotate: 5deg;
+}
+.child__two1 .child-name {
+  font-size: 20px;
+  left: 30%;
+  top: 100%;
+  rotate: -10deg;
+  translate: 0% 50%;
+  text-align: center;
+}
+.child__two1 .child-name:before {
+  font-size: 70px;
+  left: 0%;
+  top: 0%;
+  transform: rotate(10deg) translate(-80%, -40%);
+}
+.child__two2 {
+  margin-top: 32px;
+  margin-left: -8px;
+  rotate: -5deg;
+}
+.child__heart2 {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  z-index: 3;
+  transform: translate(-60%, 0%);
+}
+.child__heart2:before {
+  font-size: 42px;
+  color: #ff3a3a;
+}
+
+.child-name {
+  position: absolute;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #262626;
+  line-height: normal;
+}
+.child-name:before {
+  position: absolute;
+  color: #262626;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.board {
+  padding: 48px 0;
+  margin-bottom: 40px;
+}
+.board__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board__info {
+  width: 100%;
+}
+.board__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: #262626;
+  line-height: normal;
+  margin-bottom: 24px;
+}
+.board__title .icon-end {
+  margin: 0 16px;
+}
+.board__title .icon-end:before {
+  font-size: 28px;
+  color: #9f847a;
+}
+.board__text {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #262626;
+  line-height: normal;
+  text-align: center;
+  margin: 0 auto;
+}
+.board__icon {
+  margin: 72px 0;
+}
+.board__icon:before {
+  font-size: 62px;
+  color: #9f847a;
+}
+.callendar {
+  padding-top: 40px;
+}
+.callendar__title {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #704f41;
+  line-height: normal;
+  margin-bottom: 32px;
+  text-align: center;
+}
+.callendar__table {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.callendar__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #262626;
+  line-height: normal;
+}
+.callendar__head span {
+  width: 28px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.callendar__row {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #262626;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.callendar__row span {
+  width: 28px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.callendar__row .icon-heart-outline:before {
+  font-size: 26px;
+  color: #ff3a3a;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.location {
+  padding: 0 42px;
+}
+.location__img img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 24px;
+}
+.location__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.location__body-d {
+  padding-top: 36px;
+}
+.location__title {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #262626;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.location__title-d {
+  color: #523628 !important;
+}
+.location__text {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #262626;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.location__subtext {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #939393;
+  line-height: normal;
+  text-align: center;
+}
+.location__btn {
+  margin-top: 20px !important;
+}
+
+.btn {
+  margin: 0;
+  display: inline-block;
+  font-family: "Montseratt", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  line-height: normal;
+  background: #523628;
+  padding: 16px 24px;
+  border-radius: 48px;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #63432C;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.icons {
+  background: #523628;
+  margin: 0 0 64px 0;
+  border-radius: 24px;
+}
+.icons__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 60px 30px;
+}
+.icons__line {
+  width: 1px;
+  height: 60px;
+  background-color: #63432C;
+}
+.icons__title-d {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.icons__gap:before {
+  font-size: 32px;
+  color: #9f847a;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.icon-item:before {
+  font-size: 98px;
+  color: #9f847a;
+}
+.icon-item__text {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  line-height: normal;
+  text-align: center;
+  max-width: 310px;
+  margin: 12px 0;
+}
+.icon-item__text-d {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  line-height: normal;
+  margin: 0;
+}
+.icon-item__title {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  line-height: normal;
+  text-align: center;
+}
+.icon-item__subtitle {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  line-height: normal;
+}
+.icon-item__image img {
+  max-width: 100%;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 200px;
+  border-radius: 24px;
+}
+.icon-item__image1 img {
+  -o-object-position: top;
+     object-position: top;
+}
+.icon-item__bigtitle {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #fff;
+  line-height: normal;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.icon-item__bigtitle-d {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #fff;
+  line-height: normal;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.form {
+  margin: 64px 0;
+}
+.form__body {
+  padding: 48px 32px;
+  border-radius: 24px;
+  background: #faf9f8;
+}
+.form__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form__icon:before {
+  font-size: 48px;
+  color: #9f847a;
+}
+.form__title {
+  margin: 16px 0 8px 0;
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #262626;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.form__text {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #262626;
+  line-height: normal;
+  text-align: center;
+  max-width: 260px;
+}
+.form__text span {
+  font-weight: 700;
+}
+.form__form {
+  margin-top: 32px;
+}
+.form__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.form__box .input-custom {
+  width: 100%;
+}
+.form__box .btn {
+  margin-top: 12px;
+  width: 100%;
+  max-width: 230px;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.dress {
+  margin: 64px 0;
+}
+.dress__body .icon-item:before {
+  margin-bottom: 20px;
+}
+.dress__images {
+  margin-top: 24px;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+  display: flex;
+  gap: 8px;
+  width: 100%; /* контейнер на всю ширину */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.dress__images img {
+  flex: 1 1 0%; /* делят ширину поровну, могут сжиматься */
+  min-width: 0; /* важно: позволяет элементу ужиматься меньше его контента */
+  width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 18px;
+}
+.dress__list {
+  display: flex;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.dress__item {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #262626;
+  line-height: normal;
+  border: 1px solid #babab9;
+  border-radius: 100px;
+}
+.dress__item_black {
+  background: #7C7B5D;
+  color: #fff;
+}
+.dress__item_gray {
+  background: #EBD9C3;
+  color: #fff;
+}
+.dress__item_broun {
+  background: #BB9C80;
+  color: #fff;
+}
+.dress__item_white {
+  background: #63432C;
+  color: #262626;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.video {
+  margin: 64px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video__body {
+  position: relative;
+  border: 12px solid #fff;
+  width: 300px;
+  padding-bottom: 130%;
+  box-shadow: 0 5px 20px 0 rgba(38, 38, 38, 0.15);
+  transform: rotate(2deg);
+}
+.video .icon-heart {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+.video .icon-heart:before {
+  font-size: 42px;
+  color: #ff3a3a;
+}
+.video__love {
+  position: absolute;
+  top: 95%;
+  left: 30%;
+}
+.video .icon-love:before {
+  font-size: 70px;
+  color: #ff3a3a;
+}
+.video .icon-arrow4 {
+  position: absolute;
+  left: 70%;
+  top: -40%;
+}
+.video .icon-arrow4:before {
+  font-size: 70px;
+  color: #262626;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+/* Стили для -------- */
+.time {
+  margin: 0px 0 64px 0;
+}
+.time__body {
+  padding: 0 40px;
+}
+.time__title {
+  font-family: "PlayfairDisplaySC", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #262626;
+  line-height: normal;
+  text-align: center;
+}
+.time__row {
+  margin-top: 24px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 12px;
+}
+.time__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.time__big {
+  font-family: "Montseratt", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #262626;
+  line-height: normal;
+  width: 60px;
+  text-align: center;
+}
+.time__gap {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.bant {
+  margin: 20px 0;
+}
+.bant__body {
+  padding: 48px;
+  border-radius: 24px;
+  background: #faf9f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bant__body:before {
+  font-size: 64px;
+  color: #9f847a;
+}
+
+.end {
+  margin-bottom: 48px;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */

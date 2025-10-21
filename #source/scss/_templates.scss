@@ -1,0 +1,201 @@
+@import "components";
+
+/* Общие стили и классы*/
+.container {
+   // max-width: 570px;
+   margin: 0 auto;
+   padding: 0 20px;
+   // width: 100%;
+}
+
+body {
+   @include fontMain(400, 130%, 16px, $color-text);
+}
+
+.img-cover {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   -o-object-fit: cover;
+   object-fit: cover;
+   max-width: 100%;
+}
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   min-height: 100vh;
+   .main {
+      flex: 1 1 auto;
+      max-width: 570px;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+   }
+}
+
+/* Кнопки/Ссылки */
+.btn {
+   margin: 24px 0;
+   text-align: center;
+   cursor: pointer;
+   appearance: none;
+   background: none;
+   box-shadow: none;
+   box-sizing: none;
+   display: block;
+   transition: 0.3s;
+
+   &_start {
+      @include fontMain(700, 140%, 14px, #fff);
+      text-transform: uppercase;
+      padding: 15px 35px;
+      background: $color-acent;
+      border-radius: 0px;
+      text-align: center;
+   }
+
+   &.disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      background: grey;
+   }
+
+   &:active {
+      opacity: 0.8;
+   }
+   &:focus {
+      // border: 1px solid red;
+   }
+
+   @media (hover: hover) {
+      &:hover {
+         background: #09af69;
+      }
+   }
+}
+/* Загрузка */
+.sending-main {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 20;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   visibility: hidden;
+   transition: 0.3s;
+   background: rgba(0, 0, 0, 0.3);
+   img {
+      width: 150px;
+   }
+   &.active {
+      opacity: 1;
+      visibility: visible;
+   }
+}
+
+/* Елементы формы */
+/* -input */
+.input-custom {
+   label {
+      display: block;
+      @include fontMain(400, 140%, 14px, #000);
+      margin: 0 0 7px 0;
+   }
+   input {
+      appearance: none;
+      text-align: center;
+      padding: 12px 16px;
+      width: 100%;
+      display: block;
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 32px;
+      @include fontMain(400, 140%, 18px, $color-text);
+      &:focus {
+         border: 1px solid #cfcfcf;
+      }
+   }
+   &__error {
+      display: none;
+      margin: 5px 0 0 0;
+      @include fontMain(400, 140%, 12px, #e52d2e);
+   }
+   .error {
+      input {
+         border: 1px solid #e52d2e;
+      }
+      textarea {
+         border: 1px solid #e52d2e;
+      }
+      .input-custom__error {
+         display: block;
+      }
+   }
+   textarea {
+      padding: 12px 16px;
+      width: 100%;
+      display: block;
+      background: #fafafa;
+      border: 1px solid #e9e9e9;
+      border-radius: 8px;
+      @include fontMain(400, 140%, 16px, #000);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      resize: none;
+      height: 100px;
+      &:focus {
+         border: 1px solid #cfcfcf;
+      }
+   }
+}
+/* -checkbox */
+.input-radio {
+   width: 100%;
+   input {
+      display: none;
+   }
+   label {
+      border: 1px solid #babab9;
+      text-align: center;
+      display: block;
+      cursor: pointer;
+      width: 100%;
+      @include fontMain(400, normal, 18px, $color-text);
+      background: none;
+      padding: 14px 16px;
+      border-radius: 48px;
+      transition: 0.3s;
+      background: #fff;
+   }
+
+   input:checked + label {
+      background: $color-acent-hover;
+      color: #fff;
+   }
+
+   &_green {
+      input:checked + label {
+         background: #47aa65;
+         color: #fff;
+      }
+   }
+
+   &_red {
+      input:checked + label {
+         background: #aa4749;
+         color: #fff;
+      }
+   }
+}
+
+// ===================================================================================================
+// ======= СТИЛИ  ====================================================================================
+// ===================================================================================================

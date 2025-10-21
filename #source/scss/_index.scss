@@ -1,0 +1,718 @@
+/* Стили для -------- */
+.hero {
+   position: relative;
+   &__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 2;
+         background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      }
+   }
+
+   &__body {
+      min-height: 800px;
+      position: relative;
+   }
+   &__text {
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      top: 54px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+   }
+
+   &__date {
+      text-align: center;
+      @include fontMain(400, normal, 24px, #fff);
+      margin: 0;
+   }
+
+   &__title {
+      margin: 0;
+      text-align: center;
+      // text-transform: uppercase;
+      max-width: 350px;
+      @include fontMain(400, normal, 32px, #fff);
+      line-height: 12px;
+   }
+   &__name{
+      padding-top: 12px;
+      text-align: center;
+      // text-transform: uppercase;
+      max-width: 350px;
+      @include fontMain(400, normal, 64px, #fff);
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.child {
+   padding: 92px 0 64px 0;
+   overflow: hidden;
+   &__body {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      min-width: 500px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0%);
+   }
+   &__img {
+      position: relative;
+      border: 12px solid #fff;
+      width: 220px;
+      padding-bottom: 55%;
+      box-shadow: 0 5px 20px 0 rgba(38, 38, 38, 0.15);
+   }
+   &__men {
+      // transform: rotate(15deg);
+      rotate: 15deg;
+      .child-name {
+         left: 0;
+         top: 0;
+         translate: 0% -200%;
+         &:before {
+            font-size: 50px;
+            left: 50%;
+            top: 90%;
+            transform: rotate(-10deg) translate(0%, 0%);
+         }
+      }
+   }
+
+   &__heart {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      z-index: 3;
+      translate: -60% 0%;
+
+      &:before {
+         font-size: 100px;
+         color: #ff3a3a;
+      }
+   }
+
+   &__woman {
+      margin-top: 54px;
+      // transform: rotate(-5deg);
+      rotate: -5deg;
+      .child-name {
+         left: 0;
+         bottom: 0;
+         translate: 0% 200%;
+         text-align: center;
+         width: 100%;
+         &:before {
+            font-size: 70px;
+            left: 0%;
+            top: 60%;
+            transform: rotate(0deg) translate(-20%, -100%);
+         }
+      }
+   }
+
+   &__two1 {
+      rotate: 5deg;
+      .child-name {
+         font-size: 20px;
+         left: 30%;
+         top: 100%;
+         rotate: -10deg;
+         translate: 0% 50%;
+         text-align: center;
+         &:before {
+            font-size: 70px;
+            left: 0%;
+            top: 0%;
+            transform: rotate(10deg) translate(-80%, -40%);
+         }
+      }
+   }
+
+   &__two2 {
+      margin-top: 32px;
+      margin-left: -8px;
+      rotate: -5deg;
+   }
+
+   &__heart2 {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      z-index: 3;
+      transform: translate(-60%, 0%);
+      &:before {
+         font-size: 42px;
+         color: #ff3a3a;
+      }
+   }
+}
+
+.child-name {
+   position: absolute;
+   @include fontMarckScript(400, normal, 24px, $color-text);
+   &:before {
+      position: absolute;
+      color: $color-text;
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.board {
+   padding: 48px 0;
+   margin-bottom: 40px;
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__info {
+      width: 100%;
+   }
+
+   &__title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include fontMain(400, normal, 40px, $color-text);
+      margin-bottom: 24px;
+      span {
+      }
+      span:first-child {
+         // transform: translate(0, -25%);
+      }
+      span:last-child {
+         // transform: translate(0, 25%);
+      }
+      .icon-end {
+         margin: 0 16px;
+         &:before {
+            font-size: 28px;
+            color: $color-acent;
+         }
+      }
+   }
+
+   &__text {
+      @include fontHead(400, normal, 16px, $color-text);
+      text-align: center;
+      // max-width: 300px;
+      margin: 0 auto;
+   }
+
+   &__icon {
+      margin: 72px 0;
+      &:before {
+         font-size: 62px;
+         color: $color-acent;
+      }
+   }
+
+   &__callendar {
+   }
+}
+.callendar {
+   padding-top: 40px;
+   &__title {
+      @include fontMain(700, normal, 22px, $color-acent-hover);
+      margin-bottom: 32px;
+      text-align: center;
+   }
+
+   &__table {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
+
+   &__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      @include fontMain(400, normal, 20px, $color-text);
+      span {
+         width: 28px;
+         height: 24px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+
+   &__row {
+      @include fontMain(400, normal, 20px, $color-text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      span {
+         width: 28px;
+         height: 24px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      .icon-heart-outline {
+         &:before {
+            font-size: 26px;
+            color: #ff3a3a;
+         }
+      }
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.location {
+   padding: 0 42px;
+   &__img {
+      
+      img {
+         width: 100%;
+         max-width: 100%;
+         border-radius: 24px;
+      }
+   }
+
+   &__body {
+      // padding: 48px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__body-d{
+      padding-top: 36px;
+   }
+
+   &__title {
+      @include fontHead(400, normal, 24px, $color-text);
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+   }
+
+   &__title-d{
+      // font-size: 32px;
+      color: #523628 !important;
+   }
+
+   &__text {
+      @include fontMain(400, normal, 20px, $color-text);
+      text-align: center;
+      margin-bottom: 8px;
+   }
+
+   &__subtext {
+      @include fontMain(400, normal, 16px, $color-text-second);
+      text-align: center;
+   }
+
+   &__btn {
+      margin-top: 20px !important;
+   }
+}
+.btn {
+   margin: 0;
+   display: inline-block;
+   @include fontHead(700, normal, 18px, #fff);
+   background: #523628;
+   padding: 16px 24px;
+   border-radius: 48px;
+   transition: 0.3s;
+   &:hover {
+      background: #63432C;
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.icons {
+   background: #523628;
+   margin: 0 0 64px 0;
+   border-radius: 24px;
+   &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 60px 30px;
+      
+   }
+
+   &__line{
+      width: 1px;
+      height: 60px;
+      background-color: #63432C;
+   }
+
+   &__title-d{
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+   }
+
+   &__gap {
+      &:before {
+         font-size: 32px;
+         color: $color-acent;
+      }
+   }
+}
+.icon-item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   &:before {
+      font-size: 98px;
+      color: $color-acent;
+   }
+   &__text {
+      @include fontMain(400, normal, 20px, #fff);
+      text-align: center;
+      max-width: 310px;
+      margin: 12px 0;
+   }
+   &__text-d{
+      @include fontHead(400, normal, 16px, #fff);
+      margin: 0;
+   }
+
+   &__title {
+      @include fontHead(400, normal, 24px, #fff);
+      text-align: center;
+   }
+
+   &__subtitle {
+      @include fontMain(700, normal, 18px, #fff);
+   }
+
+   &__image{
+      // max-width: 440px;
+      // border: #ff3a3a 1px solid;
+      // width: 100%;
+      // object-fit: cover;
+      
+      & img{
+         max-width: 100%;
+         width: 100vw;
+         // height: 200px;
+         // object-fit: fill;
+         object-fit: cover;
+         height: 200px;
+         border-radius: 24px
+      }
+   }
+
+   &__image1{
+      & img{
+         object-position: top;
+      }
+   }
+
+   &__bigtitle {
+      @include fontMain(400, normal, 32px, #fff);
+      text-align: center;
+      margin-bottom: 20px;
+      // text-transform: uppercase;
+   }
+
+   &__bigtitle-d {
+      @include fontHead(400, normal, 22px, #fff);
+      text-align: center;
+      // margin-bottom: 20px;
+      margin-top: 20px;
+      // text-transform: uppercase;
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.form {
+   margin: 64px 0;
+   &__body {
+      padding: 48px 32px;
+      border-radius: 24px;
+      background: #faf9f8;
+   }
+
+   &__top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__icon {
+      &:before {
+         font-size: 48px;
+         color: $color-acent;
+      }
+   }
+
+   &__title {
+      margin: 16px 0 8px 0;
+      @include fontHead(400, normal, 24px, $color-text);
+      text-transform: uppercase;
+   }
+
+   &__text {
+      @include fontMain(400, normal, 20px, $color-text);
+      text-align: center;
+      max-width: 260px;
+      span {
+         font-weight: 700;
+      }
+   }
+
+   &__form {
+      margin-top: 32px;
+   }
+
+   &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      .input-custom {
+         width: 100%;
+      }
+      .btn {
+         margin-top: 12px;
+         width: 100%;
+         max-width: 230px;
+      }
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.dress {
+   margin: 64px 0;
+   &__body {
+      .icon-item {
+         &:before {
+            margin-bottom: 20px;
+         }
+      }
+   }
+
+   &__images{
+      margin-top: 24px;
+      padding: 0 20px;
+      flex-wrap: nowrap;
+      display: flex;
+      gap: 8px;
+      width: 100%;             /* контейнер на всю ширину */
+      overflow: hidden;
+      box-sizing: border-box;
+      & img{
+         flex: 1 1 0%;        /* делят ширину поровну, могут сжиматься */
+  min-width: 0;        /* важно: позволяет элементу ужиматься меньше его контента */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+         border-radius: 18px;
+      }
+   }
+
+   &__list {
+      display: flex;
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+   }
+
+   &__item {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include fontMain(400, normal, 18px, $color-text);
+
+      border: 1px solid #babab9;
+      border-radius: 100px;
+
+      &_black {
+         background: #7C7B5D;
+         color: #fff;
+      }
+
+      &_gray {
+         background: #EBD9C3;
+         color: #fff;
+      }
+
+      &_broun {
+         background: #BB9C80;
+         color: #fff;
+      }
+
+      &_white {
+         background: #63432C;
+         color: $color-text;
+      }
+   }
+}
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.video {
+   margin: 64px 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   &__body {
+      position: relative;
+      border: 12px solid #fff;
+      width: 300px;
+      padding-bottom: 130%;
+      box-shadow: 0 5px 20px 0 rgba(38, 38, 38, 0.15);
+      transform: rotate(2deg);
+      video {
+      }
+   }
+
+   .icon-heart {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+
+      &:before {
+         font-size: 42px;
+         color: #ff3a3a;
+      }
+   }
+
+   &__love {
+      position: absolute;
+      top: 95%;
+      left: 30%;
+   }
+
+   .icon-love {
+      &:before {
+         font-size: 70px;
+         color: #ff3a3a;
+      }
+   }
+   .icon-arrow4 {
+      position: absolute;
+      left: 70%;
+      top: -40%;
+      &:before {
+         font-size: 70px;
+         color: $color-text;
+      }
+   }
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */
+
+/* Стили для -------- */
+.time {
+   margin: 0px 0 64px 0;
+   
+   &__body {
+      padding: 0 40px;
+   }
+
+   &__title {
+      @include fontMain(400, normal, 20px, $color-text);
+      text-align: center;
+   }
+
+   &__row {
+      margin-top: 24px;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      gap: 12px;
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__big {
+      @include fontHead(400, normal, 32px, $color-text);
+      width: 60px;
+      text-align: center;
+   }
+
+   &__gap {
+      margin-top: 20px;
+      font-size: 24px;
+   }
+}
+
+.bant {
+   margin: 20px 0;
+   &__body {
+      padding: 48px;
+      border-radius: 24px;
+      background: #faf9f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:before {
+         font-size: 64px;
+         color: $color-acent;
+      }
+   }
+}
+
+.end{
+   margin-bottom: 48px;
+}
+
+/* ------- адаптация ------- */
+/* ------- end ------- */

@@ -1,0 +1,58 @@
+// Переменные
+
+$c1: #fff;
+
+$color-acent: #9f847a;
+$color-acent-hover: #704f41;
+
+$color-acent-second: #0a0a0a;
+
+$gradient-main: #fff;
+
+$color-bg: #fff;
+$color-bg-second: #fff;
+
+$color-text: #262626;
+$color-text-second: #939393;
+
+$color-border: #e3e3e3;
+
+// Миксины
+@mixin fontHead($fw, $lh, $fz, $fc) {
+   font-family: "Montseratt", sans-serif;
+   font-weight: $fw;
+   font-size: $fz;
+   color: $fc;
+   line-height: $lh;
+}
+// @include fontMain(600, 130%, 9px, $c1);
+
+// Миксины
+@mixin fontMain($fw, $lh, $fz, $fc) {
+   font-family: "PlayfairDisplaySC", sans-serif;
+   font-weight: $fw;
+   font-size: $fz;
+   color: $fc;
+   line-height: $lh;
+}
+// @include fontMain(600, 130%, 9px, $c1);
+
+// Миксины
+@mixin fontMarckScript($fw, $lh, $fz, $fc) {
+   font-family: "PlayfairDisplaySC", sans-serif;
+   font-weight: $fw;
+   font-size: $fz;
+   color: $fc;
+   line-height: $lh;
+}
+// @include fontMain(600, 130%, 9px, $c1);
+
+// Миксины
+@mixin fontGreatVibes($fw, $lh, $fz, $fc) {
+   font-family: "Montseratt", sans-serif;
+   font-weight: $fw;
+   font-size: $fz;
+   color: $fc;
+   line-height: $lh;
+}
+// @include fontMain(600, 130%, 9px, $c1);
